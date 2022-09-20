@@ -18,7 +18,14 @@ internal static Dictionary<FunctionName, OneVariableFunction> AvailableFunctions
             {
                 { "square", x => x * x },
                 { "sin", Math.Sin },
-                { TODO<String>(), TODO<Func<double, double>>() }
+                { "sqrt", Math.Sqrt },
+                { "abs", Math.Abs},
+                { "sign", x => (x == 0) ? 0 : x / Math.Abs(x) },
+                { "floor", Math.Floor },
+                { "mantissa", x => x - Math.Floor(x) },
+                { "cos", Math.Cos },
+                { "cube", x => Math.Pow(x, 3) },
+                { "strange", x => x * x - 2 * x + 17 }
             };
 
 // Тип данных для представления входных данных
