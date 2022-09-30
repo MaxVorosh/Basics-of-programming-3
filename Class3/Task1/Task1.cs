@@ -144,6 +144,7 @@ namespace Task1
             {
                 return new Tuple<Player, Table>(Player.Draw, table);
             }
+
             Player winner = (hands[firstPlayer].Count != 0) ? Player.FirstPlayer : Player.SecondPlayer;
             return new Tuple<Player, Deck>(winner, table);
         }

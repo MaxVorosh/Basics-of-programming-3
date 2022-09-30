@@ -47,25 +47,29 @@ public class Tests
     [Test]
     public void RoundTest()
     {
-        throw new NotImplementedException();
+        var queen = new Card(Rank.Queen, Suit.Clubs);
+        var jack = new Card(Rank.Jack, Suit.Diamonds);
+        Dictionary<Player, List<Card>> hands = new Dictionary<Player, List<Card>>
+        {
+            { Player.FirstPlayer, new List<Card> { queen, queen } },
+            { Player.SecondPlayer, new List<Card> { queen, jack } }
+        };
+        var roundWinner = Round(hands);
+        That(roundWinner.Item1, Is.EqualTo(Player.FirstPlayer));
+        That(roundWinner.Item2, Is.EqualTo(new List<Card> {queen, queen, queen, jack}));
     }
 
     [Test]
     public void Game2CardsTest()
     {
-        var six = TODO<Card>();
-        var ace = TODO<Card>();
+        var six = new Card(Rank.Six, Suit.Clubs);
+        var ace = new Card(Rank.Ace, Suit.Diamonds);
         Dictionary<Player, List<Card>> hands = new Dictionary<Player, List<Card>>
         {
-            { TODO<Player>(), new List<Card> {six} },
-            { TODO<Player>(), new List<Card> {ace} }
+            { Player.FirstPlayer, new List<Card> { six } },
+            { Player.SecondPlayer, new List<Card> { ace } }
         };
         var gameWinner = Game(hands);
-        That(gameWinner, Is.EqualTo(TODO<Player>()));
-    }
-    
-    private static T TODO<T>()
-    {
-        throw new NotImplementedException();
+        That(gameWinner, Is.EqualTo(Player.SecondPlayer));
     }
 }

@@ -5,7 +5,6 @@ namespace Task2
 {
     public class Task2
     {
-
 /*
  * В этом задании необходимо написать программу, способную табулировать сразу несколько
  * функций одной вещественной переменной на одном заданном отрезке.
@@ -13,13 +12,13 @@ namespace Task2
 
 
 // Сформируйте набор как минимум из десяти вещественных функций одной переменной
-internal static Dictionary<FunctionName, OneVariableFunction> AvailableFunctions =
+        internal static Dictionary<FunctionName, OneVariableFunction> AvailableFunctions =
             new Dictionary<FunctionName, OneVariableFunction>
             {
                 { "square", x => x * x },
                 { "sin", Math.Sin },
                 { "sqrt", Math.Sqrt },
-                { "abs", Math.Abs},
+                { "abs", Math.Abs },
                 { "sign", x => (x == 0) ? 0 : x / Math.Abs(x) },
                 { "floor", Math.Floor },
                 { "mantissa", x => x - Math.Floor(x) },
@@ -29,7 +28,7 @@ internal static Dictionary<FunctionName, OneVariableFunction> AvailableFunctions
             };
 
 // Тип данных для представления входных данных
-internal record InputData(double FromX, double ToX, int NumberOfPoints, List<string> FunctionNames);
+        internal record InputData(double FromX, double ToX, int NumberOfPoints, List<string> FunctionNames);
 
 // Чтение входных данных из параметров командной строки
         private static InputData? prepareData(string[] args)
@@ -41,8 +40,8 @@ internal record InputData(double FromX, double ToX, int NumberOfPoints, List<str
 // с заголовками столбцов и строками (первый столбец --- значение x,
 // остальные столбцы --- значения функций). Одно из полей --- количество знаков
 // после десятичной точки.
-internal record FunctionTable
-{
+        internal record FunctionTable
+        {
             // Код, возвращающий строковое представление таблицы (с использованием StringBuilder)
             // Столбец x выравнивается по левому краю, все остальные столбцы по правому.
             // Для форматирования можно использовать функцию String.Format.
@@ -60,7 +59,7 @@ internal record FunctionTable
         {
             throw new NotImplementedException();
         }
-        
+
         public static void Main(string[] args)
         {
             // Входные данные принимаются в аргументах командной строки
@@ -71,11 +70,10 @@ internal record FunctionTable
             // Собственно табулирование и печать результата (что надо поменять в этой строке?):
             Console.WriteLine(tabulate(input));
         }
-        
+
         private static T TODO<T>()
         {
             throw new NotImplementedException();
         }
-
     }
 }
