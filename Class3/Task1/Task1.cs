@@ -162,7 +162,14 @@ namespace Task1
                 {
                     return Player.Draw;
                 }
-
+                var rnd = new Random();
+                for (int i = 0; i < roundResult.Item2.Count; i+=2)
+                {
+                    if (rnd.Next() % 2 == 0)
+                    {
+                        (roundResult.Item2[i], roundResult.Item2[i + 1]) = (roundResult.Item2[i + 1], roundResult.Item2[i]);
+                    }
+                }
                 hands[winner].AddRange(roundResult.Item2);
                 int tableSize = roundResult.Item2.Count;
                 for (int i = 0; i < tableSize; i += 2)

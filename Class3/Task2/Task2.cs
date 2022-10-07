@@ -156,7 +156,7 @@ namespace Task2
             var input = prepareData(args);
 
             // Собственно табулирование и печать результата (что надо поменять в этой строке?):
-            Console.WriteLine(tabulate(input));
+            Console.WriteLine(tabulate(input).ToString());
         }
     }
 }
